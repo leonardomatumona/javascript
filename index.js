@@ -1,8 +1,8 @@
 
 function incluir(){
 
-    var name = document.querySelector("#new-task")
-    var entrada= document.querySelector(".task-list")
+    var add= document.querySelector("#new-task")
+    var tasklist= document.querySelector(".task-list")
     var liNode= document.createElement("li")
     var txtNode = document.createTextNode(name)
 
