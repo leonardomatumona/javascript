@@ -1,5 +1,5 @@
 function add() {
-    alert(oi)
+
     var txtVal = document.getElementById('txtVal').value,
         listNode = document.getElementById('list'),
         liNode= document.createElement("LI"),
