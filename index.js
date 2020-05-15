@@ -37,11 +37,21 @@ function drawtext(event){
 
     item.classList.remove("task-list__item")
     item.classList.add("task-list__item--done")
+    botao.innerHTML="<i class=\"fas fa-undo-alt\"></i>"
 
+    botao.removeEventListener("click",drawtext)
+    botao.addEventListener("click",removedraw)
+}
+function removedraw(event){
+    const botao = event.currentTarget
+    const item = botao.parentNode
+
+    item.classList.remove("task-list__item--done")
+    item.classList.add("task-list__item")
+    botao.innerHTML="<i class=\"fas fa-check-square\"></i>"
 
 }
 
-button.addEventListener("click", adicionar)
 
 
 
