@@ -9,7 +9,7 @@ function adicionar(event) {
     }
 
     const criarItem = newItem(input.value)
-    lista.appendChild(criarItem)
+    list.appendChild(criarItem)
     input.value=""
     input.focus()
 }
@@ -18,7 +18,7 @@ function newItem(recebertexto){
     const criarItem= document.createElement("li")
     criarItem.classList.add("task-list__item")
     criarItem.innerText= recebertexto
-    criarItem.appendChild(createbutton) 
+    criarItem.appendChild(createbutton()) 
     return newItem   
 }
 
@@ -50,8 +50,12 @@ function removedraw(event){
     item.classList.add("task-list__item")
     botao.innerHTML="<i class=\"fas fa-check-square\"></i>"
 
+    botao.removeEventListener("click", removedraw)
+    botao.addEventListener("click", drawtext)
+
 }
 
+button.addEventListener("click", adicionar)
 
 
 
