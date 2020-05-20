@@ -19,7 +19,7 @@ function newItem(recebertexto){
     criarItem.classList.add("task-list__item")
     criarItem.innerText= recebertexto
     criarItem.appendChild(createbutton()) 
-    return newItem   
+    return criarItem   
 }
 
 function createbutton (){

@@ -60,3 +60,7 @@ input[type=text] {
     margin: 0.1rem 0;
     padding: 0.5rem 0 0.5rem 1rem;
     border-bottom: 1px solid #B2DBBF;
+}
+.task-list__item--done {
+    text-decoration: line-through;
+}
