@@ -1,37 +1,61 @@
 $(function () {
     $("#mostrar").click(mostrar)
     $("#esconder").click(esconder)
-    $("#img").hover(function(){
-        $(this).fadeTo(0,0.5)
+    $("#img").hover(function () {
+        $(this)
+            .animate({
+                opacity: 1,
+                width: '300px'
+
+            })
     })
-    $("#img").mouseleave(function(){
-        $(this).fadeTo(0,1)
+    $("#img").mouseleave(function () {
+        $(this)
+            .animate({
+                opacity: 0.5,
+                width: '200px'
+
+            })
+
     })
-    $("h1").hover(function(){
-        $(this).addClass("destaque")
-    })
-    $("h1").mouseleave(function(){
-        $(this).removeClass("destaque")
-    })
+    $("h1").hover(aplicarDestaque)
+    $("h1").mouseleave(tirarDestaque)
+
     $("#p1").hover(aplicarDestaque)
     $("#p1").mouseleave(tirarDestaque)
 })
+
 
 function mostrar() {
     $("#p1").fadeIn(1000)
 
 }
-function esconder(){
+function esconder() {
     $("#p1").fadeOut(3000)
 }
 
-function aplicarDestaque(){
-    $("#p1").addClass("destaque")
-   
+
+
+function aplicarDestaque() {
+    $(this).addClass("destaque")
+    let texto = $(this).text()
+    console.log(texto)
+    texto = texto + " (destaque)"
+    $(this).text(texto)
+
+
 }
 
-function tirarDestaque(){
-    $("#p1").removeClass("destaque")
+function tirarDestaque() {
+    $(this).removeClass("destaque")
+    let texto = $(this).text()
+    const limite = texto.indexOf(" (destaque)")
+    texto = texto.substring(0, limite)
+    $(this).text(texto)
+
+
+
+
 
 }
 
